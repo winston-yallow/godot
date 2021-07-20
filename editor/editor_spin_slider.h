@@ -59,6 +59,7 @@ class EditorSpinSlider : public Range {
 
 	bool read_only;
 	float grabbing_spinner_dist_cache;
+	float grabbing_spinner_speed;
 	Vector2 grabbing_spinner_mouse_pos;
 	double pre_grab_value;
 

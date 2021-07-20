@@ -351,6 +351,8 @@ void EditorSettings::_load_defaults(Ref<ConfigFile> p_extra_config) {
 	// Inspector
 	_initial_set("interface/inspector/max_array_dictionary_items_per_page", 20);
 	hints["interface/inspector/max_array_dictionary_items_per_page"] = PropertyInfo(Variant::INT, "interface/inspector/max_array_dictionary_items_per_page", PROPERTY_HINT_RANGE, "10,100,1", PROPERTY_USAGE_DEFAULT);
+	_initial_set("interface/inspector/float_drag_speed", 5.0);
+	hints["interface/inspector/float_drag_speed"] = PropertyInfo(Variant::FLOAT, "interface/inspector/float_drag_speed");
 
 	// Theme
 	_initial_set("interface/theme/preset", "Default");

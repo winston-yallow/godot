@@ -71,6 +71,7 @@ void EditorSpinSlider::_gui_input(const Ref<InputEvent> &p_event) {
 				} else {
 					grabbing_spinner_attempt = true;
 					grabbing_spinner_dist_cache = 0;
+					grabbing_spinner_speed = EditorSettings::get_singleton()->get("interface/inspector/float_drag_speed");
 					pre_grab_value = get_value();
 					grabbing_spinner = false;
 					grabbing_spinner_mouse_pos = Input::get_singleton()->get_mouse_position();
@@ -103,7 +104,7 @@ void EditorSpinSlider::_gui_input(const Ref<InputEvent> &p_event) {
 			if (mm->get_shift() && grabbing_spinner) {
 				diff_x *= 0.1;
 			}
-			grabbing_spinner_dist_cache += diff_x;
+			grabbing_spinner_dist_cache += diff_x * grabbing_spinner_speed;
 
 			if (!grabbing_spinner && ABS(grabbing_spinner_dist_cache) > 4 * EDSCALE) {
 				Input::get_singleton()->set_mouse_mode(Input::MOUSE_MODE_CAPTURED);
