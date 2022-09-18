@@ -84,6 +84,7 @@ enum SkyUniformLocation {
 	SKY_MATERIAL_UNIFORM_LOCATION,
 	SKY_DIRECTIONAL_LIGHT_UNIFORM_LOCATION,
 	SKY_MULTIVIEW_UNIFORM_LOCATION,
+	SPEC_CONSTANT_DISABLE_FOG_DEPTH = 5,
 };
 
 struct RenderDataGLES3 {
@@ -334,7 +335,14 @@ private:
 			float fog_height;
 			float fog_height_density;
 
+			uint32_t fog_depth_enabled;
+			float fog_depth_curve;
+			float fog_depth_density;
+			float fog_depth_begin;
+
 			float fog_light_color[3];
+			float fog_depth_end;
+
 			float fog_sun_scatter;
 			uint32_t camera_visible_layers;
 			uint32_t pad1;
