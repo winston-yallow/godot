@@ -162,7 +162,6 @@ layout(std140) uniform SceneData { // ubo:2
 	uint camera_visible_layers;
 	uint pad3;
 	uint pad4;
-	uint pad5;
 }
 scene_data;
 

@@ -347,7 +347,6 @@ private:
 			uint32_t camera_visible_layers;
 			uint32_t pad1;
 			uint32_t pad2;
-			uint32_t pad3;
 		};
 		static_assert(sizeof(UBO) % 16 == 0, "Scene UBO size must be a multiple of 16 bytes");
 
